@@ -4,7 +4,7 @@ import com.github.freva.asciitable.AsciiTable;
 
 public class Brunosbox {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
         System.out.println("\n - I see three of them out there."
                 + "\n - Hit the one in the middle.- Rocky Balboa\n");
@@ -87,5 +87,5 @@ public class Brunosbox {
         RegularRound round = new RegularRound("10 - 9");
         System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
                 " - " + round.getBlueBoxerScore());
-    }
+        }
 }
