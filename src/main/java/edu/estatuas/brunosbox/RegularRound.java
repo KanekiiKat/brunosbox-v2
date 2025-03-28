@@ -8,12 +8,21 @@ public class RegularRound implements Round {
 
     public RegularRound(String roundScore){
 
-        this.roundScore = roundScore;
+        this.roundScore = roundScore.replaceAll("\\s","");
+        this.getScores();
     }
 
-    public byte redBoxerScore(){
-        roundScore.replace(" ", "");
-        return (roundScore.substring(0, roundScore.indexOf("-"))).;
+    private void getScores(){
+        this.redBoxerScore = Byte.parseByte(this.roundScore.substring(0, this.roundScore.indexOf("-")));
+        this.blueBoxerScore = Byte.parseByte(this.roundScore.substring(this.roundScore.indexOf("-")+1, this.roundScore.length()));
+    }
 
+
+    public byte getRedBoxerScore(){
+        return this.redBoxerScore;
+    }
+
+    public byte getBlueBoxerScore(){
+        return this.blueBoxerScore;
     }
 }

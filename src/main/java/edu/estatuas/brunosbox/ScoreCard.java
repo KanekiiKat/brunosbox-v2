@@ -22,14 +22,13 @@ public class ScoreCard {
 
     @Override
     public String toString() {
-        return "\n\t\t" + this.color
+        return "\n\t\t\s\s\s" + this.color
                 + "\n\t" + this.blueCorner + "\t"
                 + this.redCorner
-                + "\n\t" + "0"
+                + "\n\t\t\s\s" + "0"
                 + " rounds\n"
-                + "\s\sRound\tScore\tRound\tScore\tRound\n"
-                + "\s\sScore\tTotal\t\tTotal\tScore"
-                + "Regular round 10 - 9";
+                + "Round\tScore\tRound\tScore\tRound\n"
+                + "Score\tTotal\t\tTotal\tScore";
     }
 
 }
