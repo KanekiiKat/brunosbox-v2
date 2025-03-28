@@ -1,10 +1,15 @@
 package edu.estatuas.brunosbox;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ScoreCard {
 
     private String color;
     private String redCorner = "";
     private String blueCorner = "";
+    private String[] judgeScoreCard;
+    private List<Round> rounds = new ArrayList<>();
 
     public ScoreCard(String color) {
 
@@ -25,10 +30,46 @@ public class ScoreCard {
         return "\n\t\t\s\s\s" + this.color
                 + "\n\t" + this.blueCorner + "\t"
                 + this.redCorner
-                + "\n\t\t\s\s" + "0"
+                + "\n\t\t\s\s" + this.getNumRounds()
                 + " rounds\n"
                 + "Round\tScore\tRound\tScore\tRound\n"
-                + "Score\tTotal\t\tTotal\tScore";
+                + "Score\tTotal\t\tTotal\tScore\n"
+                + viewRounds();
     }
 
+    public void loadJudgeScoreCard(String[] judgeScoreCard) {
+        this.judgeScoreCard = judgeScoreCard;
+        this.addRounds();
+    }
+
+    private void addRounds() {
+        
+        for (String round : this.judgeScoreCard){
+            rounds.add(new RegularRound(round));
+        }
+    }
+
+    private int getNumRounds() {
+        int value = 0;
+        if (this.judgeScoreCard != null){
+            value = this.judgeScoreCard.length;
+        } 
+        return value;
+    }
+
+    private String viewRounds(){
+        
+        String roundsString = "";
+        int rondaActual = 1;
+        for (Round round : this.rounds){
+            roundsString = roundsString 
+                            + round.getRedBoxerScore() 
+                            + "\t\t" + rondaActual 
+                            + "\t\t" + round.getBlueBoxerScore() 
+                            + "\n";
+            rondaActual++;
+        }
+
+        return roundsString;
+    }
 }

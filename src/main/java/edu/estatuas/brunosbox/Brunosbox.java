@@ -87,5 +87,33 @@ public class Brunosbox {
         RegularRound round = new RegularRound("10 - 9");
         System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
                 " - " + round.getBlueBoxerScore());
+
+        /*
+         * Carga en la tarjeta blanca 
+         * los puntos de todos los rounds
+         * de la primera tarjeta del array data.
+         * 
+         * Cada round es un objeto del tipo RegularRound.
+         * La tarjeta blanca es una colección de objetos
+         * de tipo Round.
+         * 
+         * Al mostrar la tarjeta se observan los 
+         * puntos obtenidos por cada pugil en cada round.
+         * Se llaman round score.
+         */
+
+        /*
+         * Calcula el final score o puntuación total
+         * de cada pugil y muestralo en la tarjeta.
+         */
+
+        /*
+         * Calcula los puntos acumulados en cada
+         * round de cada pugil y muestralo en la tarjeta.
+         * Se llaman score total.
+         */
+
+        whiteScoreCard.loadJudgeScoreCard(data[0]);
+        System.out.println(whiteScoreCard);
         }
 }

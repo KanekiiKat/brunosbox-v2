@@ -25,4 +25,9 @@ public class RegularRound implements Round {
     public byte getBlueBoxerScore(){
         return this.blueBoxerScore;
     }
+
+    @Override
+    public String toString(){
+        return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();
+    }
 }
