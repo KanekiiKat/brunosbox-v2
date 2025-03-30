@@ -34,7 +34,10 @@ public class ScoreCard {
                 + " rounds\n"
                 + "Round\tScore\tRound\tScore\tRound\n"
                 + "Score\tTotal\t\tTotal\tScore\n"
-                + viewRounds();
+                + viewRounds()
+                + "FINAL SCORE: " + getRedBoxerFinalScore()
+                + " - " + getBlueBoxerFinalScore()
+                + " FINAL SCORE\n";
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
@@ -55,6 +58,24 @@ public class ScoreCard {
             value = this.judgeScoreCard.length;
         } 
         return value;
+    }
+
+    private int getRedBoxerFinalScore(){
+
+        int redBoxerFinalScore = 0;
+        for (Round round : this.rounds){
+            redBoxerFinalScore += round.getRedBoxerScore();
+        }
+        return redBoxerFinalScore;
+    }
+
+    private int getBlueBoxerFinalScore(){
+
+        int blueBoxerFinalScore = 0;
+        for (Round round : this.rounds){
+            blueBoxerFinalScore += round.getBlueBoxerScore();
+        }
+        return blueBoxerFinalScore;
     }
 
     private String viewRounds(){
