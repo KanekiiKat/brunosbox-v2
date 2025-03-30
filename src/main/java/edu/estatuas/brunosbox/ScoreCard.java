@@ -82,11 +82,15 @@ public class ScoreCard {
         
         String roundsString = "";
         int rondaActual = 1;
+        int redBoxerActualScore = 0;
+        int blueBoxerActualScore = 0;
         for (Round round : this.rounds){
             roundsString = roundsString 
                             + round.getRedBoxerScore() 
-                            + "\t\t" + rondaActual 
-                            + "\t\t" + round.getBlueBoxerScore() 
+                            + "\t" + (redBoxerActualScore += round.getRedBoxerScore())
+                            + "\t" + rondaActual
+                            + "\t" + (blueBoxerActualScore += round.getBlueBoxerScore())
+                            + "\t" + round.getBlueBoxerScore() 
                             + "\n";
             rondaActual++;
         }
