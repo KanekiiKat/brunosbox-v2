@@ -180,5 +180,21 @@ public class Brunosbox {
          * Calcula el final score o puntuación total
          * de cada pugil y muestralo en la tarjeta.
          */
+
+        /*
+         * Crea una clase llamada PointsDeducted
+         * que implemente la interfaz Round.
+         * 
+         * Crea un round del tipo "10 - 8 1" o "1 8 -10".
+         * Muestra la puntuación obtenida por
+         * cada boxeador.
+         * 
+         * En PointsDeducted la puntuacion se almacena
+         * como un número entero, no como un String.
+         */
+
+        PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
+        System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
+                                " - " + deducted.getBlueBoxerScore());
         }
 }
