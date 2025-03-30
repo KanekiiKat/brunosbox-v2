@@ -147,5 +147,38 @@ public class Brunosbox {
         System.out.println("\t regular round: " + regular);
         KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
         System.out.println("\t knockdown round: " + knockdown);
+
+        /*
+         * Carga en la tarjeta blue 
+         * los puntos de todos los rounds
+         * de la segunda tarjeta del array data.
+         * 
+         * Cada round es un objeto del tipo RegularRound o KnockdownRound.
+         * La tarjeta azul es una colección de objetos
+         * de tipo Round.
+         * 
+         * El metodo loadJudgeScoreCard() hace uso del
+         * metodo getRound() de la clase RoundFactory
+         * para obtener el tipo de round indicado en la 
+         * tarjeta del juez.
+         * 
+         * Al mostrar la tarjeta se observan los 
+         * puntos obtenidos por cada pugil en cada round.
+         * Se llaman round score.
+         * 
+         * Calcula los puntos acumulados en cada
+         * round de cada pugil y muestralo en la tarjeta.
+         * Se llaman score total.
+         */
+        ScoreCard blueScoreCard = new ScoreCard("BLUE");
+        blueScoreCard.setRCorner("Rocky Balboa");
+        blueScoreCard.setBCorner("Apollo Creed");
+
+        blueScoreCard.loadJudgeScoreCard(data[1]);
+        System.out.println(blueScoreCard);
+        /*
+         * Calcula el final score o puntuación total
+         * de cada pugil y muestralo en la tarjeta.
+         */
         }
 }

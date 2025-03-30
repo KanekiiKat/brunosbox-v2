@@ -42,13 +42,10 @@ public class ScoreCard {
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
         this.judgeScoreCard = judgeScoreCard;
-        this.addRounds();
-    }
-
-    private void addRounds() {
-        
         for (String round : this.judgeScoreCard){
-            rounds.add(new RegularRound(round));
+            rounds.add(
+            RoundFactory.getRound(round)
+            );
         }
     }
 
