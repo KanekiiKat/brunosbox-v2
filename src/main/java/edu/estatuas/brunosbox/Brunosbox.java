@@ -132,6 +132,20 @@ public class Brunosbox {
         System.out.println("\n\t knockdown round: " + knockdownRound.getRedBoxerScore() +
                         " - " + knockdownRound.getBlueBoxerScore());
 
-        
+        /*
+         * Crea una clase RoundFactory que crea
+         * un objeto de tipo RegularRound o KnockdownRound
+         * segun si la puntuación indicada por el /la juez
+         * es "10 - 9" o "10 - 8".
+         * 
+         * Si el metodo getRound() no construye el tipo indicado
+         * en el casting, las siguientes líneas daran error
+         * en tiempo de ejecución.
+         */
+
+        RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
+        System.out.println("\t regular round: " + regular);
+        KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
+        System.out.println("\t knockdown round: " + knockdown);
         }
 }

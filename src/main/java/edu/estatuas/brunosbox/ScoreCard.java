@@ -37,7 +37,7 @@ public class ScoreCard {
                 + viewRounds()
                 + "FINAL SCORE: " + getRedBoxerFinalScore()
                 + " - " + getBlueBoxerFinalScore()
-                + " FINAL SCORE\n";
+                + " FINAL SCORE";
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {

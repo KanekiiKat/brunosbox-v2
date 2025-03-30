@@ -14,7 +14,8 @@ public class KnockdownRound implements Round{
         
     }
 
-    private void boxerRoundScore(){
+    @Override
+    public void boxerRoundScore(){
         this.redBoxerScore = Byte.parseByte(this.roundScore.substring(0, this.roundScore.indexOf("-")));
         this.blueBoxerScore = Byte.parseByte(this.roundScore.substring(this.roundScore.indexOf("-")+1, this.roundScore.length()));
     }

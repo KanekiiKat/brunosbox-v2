@@ -12,16 +12,18 @@ public class RegularRound implements Round {
         this.boxerRoundScore();
     }
 
-    private void boxerRoundScore(){
+    @Override
+    public void boxerRoundScore(){
         this.redBoxerScore = Byte.parseByte(this.roundScore.substring(0, this.roundScore.indexOf("-")));
         this.blueBoxerScore = Byte.parseByte(this.roundScore.substring(this.roundScore.indexOf("-")+1, this.roundScore.length()));
     }
 
-
+    @Override
     public byte getRedBoxerScore(){
         return this.redBoxerScore;
     }
 
+    @Override
     public byte getBlueBoxerScore(){
         return this.blueBoxerScore;
     }
