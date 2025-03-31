@@ -31,10 +31,10 @@ public class ScoreCard {
 
     @Override
     public String toString() {
-        return "\n\t\t\s\s\s" + this.color
-                + "\n\t" + this.blueCorner + "\t"
+        return "\n\t\t" + this.color
+                + "\n\s\s\s\s" + this.blueCorner + "\t"
                 + this.redCorner
-                + "\n\t\t\s\s" + this.getNumRounds()
+                + "\n\t\s\s\s" + this.getNumRounds()
                 + " rounds\n"
                 + "Round\tScore\tRound\tScore\tRound\n"
                 + "Score\tTotal\t\tTotal\tScore\n"
