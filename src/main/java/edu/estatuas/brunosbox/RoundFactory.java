@@ -16,6 +16,9 @@ public class RoundFactory {
         else if (knockdownScores.contains(roundScore)){
             return new KnockdownRound(roundScore);
         }
+        else if (roundScore.contains(",")){
+            return new PointsDeducted(roundScore);
+        }
         return null;
     }
 }

@@ -25,6 +25,10 @@ public class ScoreCard {
         this.blueCorner = blueCorner;
     }
 
+    public List<Round> getRounds(){
+        return this.rounds;
+    }
+
     @Override
     public String toString() {
         return "\n\t\t\s\s\s" + this.color
@@ -49,7 +53,7 @@ public class ScoreCard {
         }
     }
 
-    private int getNumRounds() {
+    public int getNumRounds() {
         int value = 0;
         if (this.judgeScoreCard != null){
             value = this.judgeScoreCard.length;
@@ -57,7 +61,7 @@ public class ScoreCard {
         return value;
     }
 
-    private int getRedBoxerFinalScore(){
+    public int getRedBoxerFinalScore(){
 
         int redBoxerFinalScore = 0;
         for (Round round : this.rounds){
@@ -66,7 +70,7 @@ public class ScoreCard {
         return redBoxerFinalScore;
     }
 
-    private int getBlueBoxerFinalScore(){
+    public int getBlueBoxerFinalScore(){
 
         int blueBoxerFinalScore = 0;
         for (Round round : this.rounds){

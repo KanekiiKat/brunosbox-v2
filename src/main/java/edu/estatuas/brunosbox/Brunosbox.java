@@ -196,5 +196,24 @@ public class Brunosbox {
         PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
         System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
                                 " - " + deducted.getBlueBoxerScore());
+                                
+        deducted = new PointsDeducted("1, 8 - 10");
+        System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
+                                " - " + deducted.getBlueBoxerScore());  
+        
+        /*
+         * Extiende o modifica la clase RoundFactory para crear
+         * un objeto de tipo PointsDeducted
+         * si la puntuación indicada por el /la juez
+         * es "10 - 8 ,1" o "1, 8 - 10".
+         * 
+         * Si el metodo getRound() no construye el tipo indicado
+         * en el casting, las siguiente línea dará error
+         * en tiempo de ejecución.
+         */
+
+        PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
+        System.out.println("\n\t factory deducted round: " + pointsDeducted);
+        
         }
 }
