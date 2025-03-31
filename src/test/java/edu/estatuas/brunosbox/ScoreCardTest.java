@@ -55,6 +55,20 @@ public class ScoreCardTest {
     }
 
     @Test
+    public void loadJudgeScoreCardRoundFactoryPointsDeductedTest() {
+
+        card.loadJudgeScoreCard(pinkScoreCard);
+        assertEquals(10, card.getNumRounds());
+        assertEquals(2, card.getRounds().stream().filter(a -> a instanceof PointsDeducted).count());
+    }
+
+    @Test
+    public void loadJudgeScoreCardRoundFactoryNullTest() {
+        card.loadJudgeScoreCard(new String[]{null, null});
+        assertEquals(0, card.getNumRounds());
+    }
+
+    @Test
     public void getBoxerFinalScoreTest() {
         assertEquals(0, card.getRedBoxerFinalScore());
         assertEquals(0, card.getBlueBoxerFinalScore());
