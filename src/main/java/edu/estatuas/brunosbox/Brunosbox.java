@@ -196,5 +196,6 @@ public class Brunosbox {
         PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
         System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
                                 " - " + deducted.getBlueBoxerScore());
+        
         }
 }
