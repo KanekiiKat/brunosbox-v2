@@ -1,6 +1,7 @@
 package edu.estatuas.brunosbox;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ScoreCard {
@@ -45,6 +46,12 @@ public class ScoreCard {
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
+        this.rounds.clear();
+        
+        if (Arrays.asList(judgeScoreCard).contains(null)){
+            return;
+        }
+        
         this.judgeScoreCard = judgeScoreCard;
         for (String round : this.judgeScoreCard){
             rounds.add(

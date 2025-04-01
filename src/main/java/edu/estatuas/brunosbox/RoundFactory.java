@@ -9,7 +9,9 @@ public class RoundFactory {
     private static List <String> knockdownScores = Arrays.asList("10 - 8","8 - 10");
 
     public static Round getRound(String roundScore){
-
+        if (roundScore == null) { 
+            return null;
+        } 
         if (regularScores.contains(roundScore)){
             return new RegularRound(roundScore);
         }

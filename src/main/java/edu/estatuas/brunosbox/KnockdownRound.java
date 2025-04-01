@@ -11,7 +11,10 @@ public class KnockdownRound implements Round{
 
         this.roundScore = roundScore.replaceAll("\\s","");
         this.boxerRoundScore();
-        
+    }
+
+    public String getRoundScore(){
+        return this.roundScore;
     }
 
     @Override
